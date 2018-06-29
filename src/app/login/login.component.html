@@ -1,6 +1,6 @@
 <p class="text-xs-center">Login</p>
-<form>
-  <div class="form-group" [formGroup] = 'form' (ngSubmit) = "onSubmit()">
+<form [formGroup] = "form" (ngSubmit) = "onSubmit()">
+  <div class="form-group">
     <label for="userName">UserName</label>
     <input
       type="text"
@@ -16,7 +16,7 @@
       type="password"
       class="form-control underlined"
       id="password"
-      placeholder="Password",
+      placeholder="Password"
       formControlName="password"
     >
   </div>
