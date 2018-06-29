@@ -1,0 +1,92 @@
+<p class="text-xs-center">Registration</p>
+<form>
+  <!--Email-->
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input
+      type="text"
+      class="form-control underlined"
+      id="email"
+      placeholder="Input email"
+    >
+    <span class="form-help-text">Error message.</span>
+    <span class="form-help-text">Success message</span>
+  </div>
+  <!--UserName-->
+  <div class="form-group has-error">
+    <label for="userName">UserName</label>
+    <input
+      type="password"
+      class="form-control underlined"
+      id="userName"
+      placeholder="Input UserName"
+    >
+    <span class="form-help-text">Error message.</span>
+    <span class="form-help-text">Success message.</span>
+  </div>
+  <!--Password-->
+  <div class="form-group has-error">
+    <label for="password">Password</label>
+    <input
+      type="password"
+      class="form-control underlined"
+      id="password"
+      placeholder="Input password"
+    >
+    <span class="form-help-text">Error message.</span>
+    <span class="form-help-text">Success message.</span>
+  </div>
+  <!--First Name-->
+  <div class="form-group has-success">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      class="form-control underlined"
+      id="name"
+      placeholder="Input name"
+    >
+    <span class="form-help-text">Error message.</span>
+    <span class="form-help-text">Success message.</span>
+  </div>
+  <!--Last Name-->
+  <div class="form-group has-error">
+    <label for="lastName">Last Name</label>
+    <input
+      type="text"
+      class="form-control underlined"
+      id="lastName"
+      placeholder="Input your Last Name"
+    >
+    <span class="form-help-text">Error message.</span>
+    <span class="form-help-text">Success message.</span>
+  </div>
+  <!--Age-->
+  <div class="form-group has-error">
+    <label for="age">Age</label>
+    <input
+      type="number"
+      class="form-control underlined"
+      id="age"
+      placeholder="Input your age"
+    >
+    <span class="form-help-text">Error message.</span>
+    <span class="form-help-text">Success message.</span>
+  </div>
+  <div class="form-group">
+    <label for="agree">
+      <input id="agree" type="checkbox">
+      <span>Accept with terms of use!</span>
+    </label>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-block btn-primary">Register!</button>
+  </div>
+  <div class="form-group">
+    <p class="text-muted text-xs-center">
+      Already registered?
+      <a routerLink="/login">
+        Login!
+      </a>
+    </p>
+  </div>
+</form>
