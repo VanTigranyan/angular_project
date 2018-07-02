@@ -14,8 +14,8 @@ export class RegistrationComponent implements OnInit {
   constructor(private userService: UserDataService, private router: Router) { }
   form: FormGroup;
 
-  onSubmit() {
-    console.log('submitted')
+  submit() {
+    console.log('submitted');
     this.userService.addUserData({
       name: this.form.controls.name.value,
       lastName: this.form.controls.lastName.value,
@@ -40,8 +40,5 @@ export class RegistrationComponent implements OnInit {
     });
   }
 
-  ngAfterViewInit(){
-    console.log(this.form);
-  }
 
 }

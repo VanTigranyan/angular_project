@@ -32,6 +32,7 @@ export class UserDataService implements AfterViewInit {
   findUser(userName) {
     for (let i = 0; i < this.userInfoArray.length; i++) {
       if (this.userInfoArray[i].userName === userName) {
+        console.log(this.userInfoArray[i]);
         return this.userInfoArray[i];
       }
     }

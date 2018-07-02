@@ -1,3 +1,34 @@
-<p>
-  user-page works!
-</p>
+<div class="auth">
+  <div class="auth-container">
+    <div class="card">
+      <header class="auth-header">
+        <h1 class="auth-title">
+          <div class="logo">
+            <span class="l l1"></span>
+            <span class="l l2"></span>
+            <span class="l l3"></span>
+            <span class="l l4"></span>
+            <span class="l l5"></span>
+          </div>
+          Auth application
+        </h1>
+      </header>
+      <div class="auth-content">
+        <h3> HI {{userInfo.name}}</h3>
+
+        <h5>Here is what we know about you)))</h5>
+
+        <ul>
+        <li>Your Last Name is {{userInfo.lastName}}</li>
+        <li>Your Email is {{userInfo.email}}</li>
+        <li>You're {{userInfo.age}} years old</li>
+        <li>Your userName is {{userInfo.userName}}</li>
+        <li>And we know your password :D But we don't say it to anyone else )</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
