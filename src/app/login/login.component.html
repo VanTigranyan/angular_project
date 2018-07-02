@@ -1,5 +1,6 @@
-<p class="text-xs-center">Login</p>
+<h4 class="text-xs-center">Login</h4>
 <form [formGroup] = "form" (ngSubmit) = "onSubmit()">
+  <h5>{{ errorMessage }}</h5>
   <div class="form-group">
     <label for="userName">UserName</label>
     <input

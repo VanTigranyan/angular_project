@@ -15,21 +15,22 @@ export class UserDataService implements AfterViewInit {
       .subscribe(data => this.userInfoArray = data);
   }
 
-  addUserData(name: string, lastName: string, userName: string, password: string, email: string, age: number) {
+  addUserData( object: {name: string, lastName: string, userName: string, password: string, email: string, age: number} ) {
     this.userInfoArray.push({
-      name: name,
-      lastName: lastName,
-      userName: userName,
-      password: password,
-      email: email,
-      age: age
+      name: object.name,
+      lastName: object.lastName,
+      userName: object.userName,
+      password: object.password,
+      email: object.email,
+      age: object.age
     });
+    console.log(this.userInfoArray);
   }
 
 
 
   findUser(userName) {
-    for (let i = 0; i > this.userInfoArray.length; i++) {
+    for (let i = 0; i < this.userInfoArray.length; i++) {
       if (this.userInfoArray[i].userName === userName) {
         return this.userInfoArray[i];
       }
@@ -39,10 +40,13 @@ export class UserDataService implements AfterViewInit {
 
   findUserName(userName) {
     console.log(userName, this.userInfoArray);
-    for (let i = 0; i > this.userInfoArray.length; i++) {
-      if (this.userInfoArray[i].userName === userName){
+    for (let i = 0; i < this.userInfoArray.length; i++) {
+      console.log(userName, this.userInfoArray);
+      if (this.userInfoArray[i].userName === userName) {
+        console.log(this.userInfoArray[i].userName);
         return true;
       }
+
     }
   }
 

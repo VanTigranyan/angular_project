@@ -1,85 +1,99 @@
 <p class="text-xs-center">Registration</p>
-<form>
+<form  [formGroup] = "form" (ngSumbit) = "onSubmit()">
   <!--Email-->
-  <div class="form-group">
+  <div class="form-group"
+       [ngClass]="{'has-error': form.get('email').invalid && form.get('email').touched, 'has-success': form.controls.email.valid && form.controls.email.touched}"
+  >
     <label for="email">Email</label>
     <input
       type="text"
       class="form-control underlined"
       id="email"
       placeholder="Input email"
+      formControlName="email"
     >
-    <span class="form-help-text">Error message.</span>
-    <span class="form-help-text">Success message</span>
+    <span class="form-help-text" *ngIf="form.controls.email.invalid && form.controls.email.touched">Error message.</span>
   </div>
   <!--UserName-->
-  <div class="form-group has-error">
+  <div class="form-group"
+       [ngClass]="{'has-error': form.get('userName').invalid && form.get('userName').touched, 'has-success': form.get('userName').valid && form.get('userName').touched}"
+  >
     <label for="userName">UserName</label>
     <input
       type="password"
       class="form-control underlined"
       id="userName"
       placeholder="Input UserName"
+      formControlName="userName"
     >
-    <span class="form-help-text">Error message.</span>
-    <span class="form-help-text">Success message.</span>
+    <span class="form-help-text" *ngIf="form.controls.userName.invalid && form.controls.userName.touched">Error message.</span>
   </div>
   <!--Password-->
-  <div class="form-group has-error">
+  <div class="form-group"
+       [ngClass]="{'has-error': form.get('password').invalid && form.get('password').touched, 'has-success': form.get('password').valid && form.get('password').touched}"
+
+  >
     <label for="password">Password</label>
     <input
       type="password"
       class="form-control underlined"
       id="password"
       placeholder="Input password"
+      formControlName="password"
     >
-    <span class="form-help-text">Error message.</span>
-    <span class="form-help-text">Success message.</span>
+    <span class="form-help-text" *ngIf="form.controls.password.invalid && form.controls.password.touched">Error message.</span>
   </div>
   <!--First Name-->
-  <div class="form-group has-success">
+  <div class="form-group"
+       [ngClass]="{'has-error': form.get('name').invalid && form.get('name').touched, 'has-success': form.get('name').valid && form.get('name').touched}"
+
+  >
     <label for="name">Name</label>
     <input
       type="text"
       class="form-control underlined"
       id="name"
       placeholder="Input name"
+      formControlName="name"
     >
-    <span class="form-help-text">Error message.</span>
-    <span class="form-help-text">Success message.</span>
+    <span class="form-help-text" *ngIf="form.controls.name.invalid && form.controls.name.touched">Error message.</span>
   </div>
   <!--Last Name-->
-  <div class="form-group has-error">
+  <div class="form-group"
+       [ngClass]="{'has-error': form.get('lastName').invalid && form.get('lastName').touched, 'has-success': form.get('lastName').valid && form.get('lastName').touched}"
+  >
     <label for="lastName">Last Name</label>
     <input
       type="text"
       class="form-control underlined"
       id="lastName"
       placeholder="Input your Last Name"
+      formControlName="lastName"
     >
-    <span class="form-help-text">Error message.</span>
-    <span class="form-help-text">Success message.</span>
+    <span class="form-help-text" *ngIf="form.controls.lastName.invalid && form.controls.lastName.touched">Error message.</span>
   </div>
   <!--Age-->
-  <div class="form-group has-error">
+  <div class="form-group"
+       [ngClass]="{'has-error': form.get('age').invalid && form.get('age').touched, 'has-success': form.get('age').valid && form.get('age').touched}"
+  >
     <label for="age">Age</label>
     <input
       type="number"
       class="form-control underlined"
       id="age"
       placeholder="Input your age"
+      formControlName="age"
     >
-    <span class="form-help-text">Error message.</span>
-    <span class="form-help-text">Success message.</span>
+    <span class="form-help-text" *ngIf="form.controls.age.invalid && form.controls.age.touched">Error message.</span>
   </div>
   <div class="form-group">
     <label for="agree">
-      <input id="agree" type="checkbox">
+      <input id="agree" type="checkbox" formControlName="agree">
       <span>Accept with terms of use!</span>
     </label>
   </div>
   <div class="form-group">
-    <button type="submit" class="btn btn-block btn-primary">Register!</button>
+    <button type="submit" class="btn btn-block btn-primary" [disabled]="form.invalid || !form.get('agree').value">Register!</button>
   </div>
   <div class="form-group">
     <p class="text-muted text-xs-center">

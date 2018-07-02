@@ -14,10 +14,13 @@ export class LoginComponent implements OnInit {
   }
 
   form: FormGroup;
+  errorMessage: String;
 
   onSubmit() {
     if (this.userService.findUserName(this.form.controls.userName.value)) {
+      console.log(this.form.controls.userName.value);
       if (this.userService.findUser(this.form.controls.userName.value).password === this.form.controls.password.value) {
+        console.log(this.userService.findUser(this.form.controls.userName.value).password);
         this.router.navigate(
           ['/user-page'],
             {
@@ -26,6 +29,8 @@ export class LoginComponent implements OnInit {
               }
             }
         );
+      } else {
+        this.errorMessage = 'Something went wrong! Check your inputs and try again!';
       }
     }
   }
@@ -37,7 +42,7 @@ export class LoginComponent implements OnInit {
         Validators.minLength(6)]),
       password: new FormControl('', [
         Validators.required,
-        Validators.minLength(4)
+        Validators.minLength(6)
       ])
     });
   }
